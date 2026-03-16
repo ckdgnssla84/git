@@ -3,15 +3,14 @@ import SajuChart from './components/SajuChart'
 import ChatInterface from './components/ChatInterface'
 import './App.css'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8001';
+const API_BASE_URL = ''; // Relative path for Vercel
 
 function App() {
-  // ... rest of the state
-  
+  // ... rest of the code
   const handleCalculate = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/api/calculate`, {
+      const response = await fetch('/api/calculate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
